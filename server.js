@@ -4,7 +4,6 @@ const app = express();
 const router = express.Router();
 
 app.set('views', 'views');  
-app.use(‘/’,router);
   
 app.get('/', function (req, res) {
   res.sendFile(path + 'index');
