@@ -1,10 +1,13 @@
 const express = require('express')
-const app = express()
-
-app.set('view engine', 'ejs')
-
+const app = express();
+const router = express.Router();
+  
+var path = __dirname + ‘/views/’;
+  
+app.use(‘/’,router);
+  
 app.get('/', function (req, res) {
-  res.render('index');
+  res.sendFile(path + 'index');
 })
 
 app.listen(3000, function () {
