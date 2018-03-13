@@ -1,0 +1,19 @@
+{
+  "name": "steambot",
+  "version": "1.0.0",
+  "description": "Steam Market Analysis Bot",
+  "main": "program.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arcasoy/SteamBot.git"
+  },
+  "author": "Alexander Arcasoy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arcasoy/SteamBot/issues"
+  },
+  "homepage": "https://github.com/arcasoy/SteamBot#readme"
+}
