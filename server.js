@@ -1,9 +1,9 @@
 const express = require('express')
 const app = express();
 const router = express.Router();
-  
-var path = __dirname + ‘/views/’;
-  
+const path = path.join(__dirname, ‘views’);
+
+app.set('views', path);  
 app.use(‘/’,router);
   
 app.get('/', function (req, res) {
