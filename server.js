@@ -6,7 +6,7 @@ const router = express.Router();
 app.set('views', 'views');  
   
 app.get('/', function (req, res) {
-  res.sendFile('views/index.html');
+  res.sendFile('root/SteamBot/views/index.html');
 })
 
 app.listen(3000, function () {
