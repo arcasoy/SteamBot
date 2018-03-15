@@ -1,15 +1,12 @@
-const path = require('path');
 const express = require('express');
 const app = express();
 const router = express.Router();
 
+app.use(express.static(__dirname + '/views/'));
+
 app.get('/', function (req, res) {
 
-  var options = {
-    root: __dirname + '/views/',
-  };
-
-  res.sendFile('index.html', options, function (err) {
+  res.sendFile('index.html', function (err) {
     if (err) {
       console.log('Send Failed');
     } else {
