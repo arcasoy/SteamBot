@@ -6,7 +6,7 @@ app.use(express.static(__dirname + '/views/'));
 
 app.get('/', function (req, res) {
 
-  res.sendFile('index.html', null,function (err) {
+  res.sendFile('index.html', undefined,function (err) {
     if (err) {
       console.log('Send Failed');
     } else {
