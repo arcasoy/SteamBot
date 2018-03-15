@@ -3,9 +3,35 @@
   <head>
     <title>SteamBot</title>
     <link rel='stylesheet' type='text/css' href='scripts/main.css'/>
+    <script src="/scripts/homepage.js"></script>
   </head>
 
   <body>
-    <div><p>HELLO</p></div>
+    <div id='content'>
+        <div class="dropdown">
+            <button onclick="weaponButton()" class="dropbtn">Weapon</button>
+            <div id="weaponDropdown" class="dropdown-content">
+                <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction1()">
+                <a>About</a>
+                <a>Base</a>
+                <a>Blog</a>
+                <a>Contact</a>
+                <a>Custom</a>
+                <a>Support</a>
+                <a>Tools</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="wearButton()" class="dropbtn">Wear</button>
+            <div id="wearDropdown" class="dropdown-content">
+                <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction2()">
+                <a>Factory New</a>
+                <a>Minimal Wear</a>
+                <a>Field Tested</a>
+                <a>Well Worn</a>
+                <a>Battle Scarred</a>
+            </div>
+        </div>
+      </div>
   </body>
 </html>
