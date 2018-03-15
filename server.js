@@ -7,7 +7,7 @@ app.use(express.static(__dirname + '/views/'));
 app.get('/', function (req, res) {
 
   var options = {
-    undefined;
+    undefined
   };
 
   res.sendFile('index.html', options, function (err) {
