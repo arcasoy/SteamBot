@@ -7,8 +7,8 @@
   </head>
 
   <body>
-    <form action="/server.js" method='POST'>
-  		Weapon: <input list="Weapon" name="weapon">
+    <form onSubmit="return Input()">
+  		Weapon: <input list="Weapon" name="weapon" id="weaponid">
   		<datalist id="Weapon">
     		<option value="AK-47">
     		<option value="AUG">
@@ -55,7 +55,7 @@
 			<option value="XM1014">
   		</datalist>
 		<br>
-		Wear: <input list="Wear" name="wear">
+		Wear: <input list="Wear" name="wear" id="wearid">
   		<datalist id="Wear">
 			<option value="Factory New">
 			<option value="Minimal Wear">
