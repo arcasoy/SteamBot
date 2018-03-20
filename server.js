@@ -16,6 +16,11 @@ app.get('/', function (req, res) {
   res.sendFile('main.css');
 });
 
+app.post('/', function (req, res) {
+console.log('Weapon: ' + req.body.weapon);
+console.log('Wear: ' + req.body.wear);
+});
+
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
 });
