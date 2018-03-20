@@ -1,10 +1,11 @@
 const connect = require('connect');
 const express = require('express');
-const app = connect();
+const app = express();
+const con = connect();
 const router = express.Router();
 var bodyParser = require('body-parser')
 
-app.use(express.bodyParser());
+con.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(__dirname));
 app.use(express.static(__dirname + '/views'));
 app.use(express.static(__dirname + '/scripts'));
