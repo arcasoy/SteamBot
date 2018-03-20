@@ -1,5 +1,5 @@
 const express = require('express');
-const app = express();
+const app = connect();
 const router = express.Router();
 var bodyParser = require('body-parser')
 
