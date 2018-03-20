@@ -1,0 +1,8 @@
+/*
+Format for prices is-
+Item Name {
+	:appid;
+	:market_hash_name;
+};
+*/
+
