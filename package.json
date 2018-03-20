@@ -10,6 +10,10 @@
     "type": "git",
     "url": "git+https://github.com/arcasoy/SteamBot.git"
   },
+  "dependencies": {
+	  "express": "~3.5.2",
+	  "body-parser": "~3.5.2"
+  },
   "author": "Alexander Arcasoy",
   "license": "ISC",
   "bugs": {
