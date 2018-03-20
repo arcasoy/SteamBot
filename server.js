@@ -1,7 +1,9 @@
 const express = require('express');
 const app = express();
 const router = express.Router();
+var bodyParser = require('body-parser')
 
+app.use(express.bodyParser());
 app.use(express.static(__dirname));
 app.use(express.static(__dirname + '/views'));
 app.use(express.static(__dirname + '/scripts'));

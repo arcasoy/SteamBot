@@ -2,36 +2,69 @@
 <html>
   <head>
     <title>SteamBot</title>
-    <link rel='stylesheet' type='text/css' href='scripts/main.css'/>
-    <script src="/scripts/homepage.js"></script>
+    <link rel='stylesheet' type='text/css' href='frontend/main.css'/>
+    <script src="/frontend/homepage.js"></script>
   </head>
 
   <body>
-    <div id='content'>
-        <div class="dropdown">
-            <button onclick="weaponButton()" class="dropbtn">Weapon</button>
-            <div id="weaponDropdown" class="dropdown-content">
-                <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction1()">
-                <a>About</a>
-                <a>Base</a>
-                <a>Blog</a>
-                <a>Contact</a>
-                <a>Custom</a>
-                <a>Support</a>
-                <a>Tools</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button onclick="wearButton()" class="dropbtn">Wear</button>
-            <div id="wearDropdown" class="dropdown-content">
-                <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction2()">
-                <a>Factory New</a>
-                <a>Minimal Wear</a>
-                <a>Field Tested</a>
-                <a>Well Worn</a>
-                <a>Battle Scarred</a>
-            </div>
-        </div>
-      </div>
+    <form action="/backend/monitor.js" method='POST'>
+  		Weapon: <input list="Weapon" name="weapon">
+  		<datalist id="Weapon">
+    		<option value="AK-47">
+    		<option value="AUG">
+    		<option value="AWP">
+    		<option value="Bayonet">
+    		<option value="Bowie Knife">
+			<option value="Butterfly Knife">
+			<option value="CZ75-Auto">
+			<option value="Desert Eagle">
+			<option value="Dual Berettas">
+			<option value="Falchion Knife">
+			<option value="FAMAS">
+			<option value="Five-SeveN">
+			<option value="Flip Knife">
+			<option value="G3SG1">
+			<option value="Galil AR">
+			<option value="Glock-18">
+			<option value="Gut Knife">
+			<option value="Huntsman Knife">
+			<option value="Karambit">
+			<option value="M249">
+			<option value="M4A1-S">
+			<option value="M4A4">
+			<option value="M9 Bayonet">
+			<option value="MAC-10">
+			<option value="MAG-7">
+			<option value="MP7">
+			<option value="MP9">
+			<option value="Negev">
+			<option value="Nova">
+			<option value="P2000">
+			<option value="P250">
+			<option value="P90">
+			<option value="PP-Bizon">
+			<option value="R8 Revolver">
+			<option value="Sawed-Off">
+			<option value="SCAR-20">
+			<option value="SG 553">
+			<option value="Shadow Daggers">
+			<option value="SSG 08">
+			<option value="Tec-9">
+			<option value="UMP-45">
+			<option value="USP-S">
+			<option value="XM1014">
+  		</datalist>
+		<br>
+		Wear: <input list="Wear" name="wear">
+  		<datalist id="Wear">
+			<option value="Factory New">
+			<option value="Minimal Wear">
+			<option value="Field-Tested">
+			<option value="Well-Worn">
+			<option value="Battle-Scarred">
+			<option value="Not Painted">
+		</datalist>
+		<button type="submit">Search</button>
+</form>
   </body>
 </html>
