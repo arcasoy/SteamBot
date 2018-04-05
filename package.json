@@ -11,8 +11,9 @@
     "url": "git+https://github.com/arcasoy/SteamBot.git"
   },
   "dependencies": {
-	  "express": "~3.5.2",
-	  "body-parser": "~3.5.2"
+    "body-parser": "~3.5.2",
+    "express": "~3.5.2",
+    "mongodb": "^3.0.5"
   },
   "author": "Alexander Arcasoy",
   "license": "ISC",
