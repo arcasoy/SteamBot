@@ -7,7 +7,9 @@ var MongoClient = require('mongodb').MongoClient
 var mongourl = "mongodb://localhost:3000/Cluster0";
 
 MongoClient.connect(mongourl, function(err, db) {
-   db.close();
+   if(!err) {
+     console.log("Connected to MongoDB");
+   }
 });
 
 app.use(express.static(__dirname));
