@@ -4,7 +4,7 @@ const app = express();
 const router = express.Router();
 
 var MongoClient = require('mongodb').MongoClient
-var mongourl = "mongodb://arcasoy1:Clo12!dog@cluster0-shard-00-00-ebxjm.mongodb.net:27017,cluster0-shard-00-01-ebxjm.mongodb.net:27017,cluster0-shard-00-02-ebxjm.mongodb.net:27017/SteamBot?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin";
+var mongourl = "mongodb://arcasoy1:Clo12%21dog@cluster0-shard-00-00-ebxjm.mongodb.net:27017,cluster0-shard-00-01-ebxjm.mongodb.net:27017,cluster0-shard-00-02-ebxjm.mongodb.net:27017/SteamBot?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin";
 
 MongoClient.connect(mongourl, function(err, db) {
    db.close();
