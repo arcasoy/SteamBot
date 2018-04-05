@@ -10,6 +10,9 @@ MongoClient.connect(mongourl, function(err, db) {
    if(!err) {
      console.log("Connected to MongoDB");
    }
+   if(err) {
+     console.log("Could not connect to MongoDB");
+   }
 });
 
 app.use(express.static(__dirname));
