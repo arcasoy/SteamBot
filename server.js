@@ -7,8 +7,9 @@ var MongoClient = require('mongodb').MongoClient
 var mongourl = "mongodb://arcasoy1:3141592653589793238462643383279@cluster0-shard-00-00-ebxjm.mongodb.net:27017,cluster0-shard-00-01-ebxjm.mongodb.net:27017,cluster0-shard-00-02-ebxjm.mongodb.net:27017/SteamBot?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin";
 
 //request the list of CSGO skins from api here which will be used to test if/make a collection for each skin
-
-
+/*
+var allitems = (steam api for all items)
+*/
 //Connect to MongoDB and check connection. Then create collection for each skin if not already made
 MongoClient.connect(mongourl, function(err, db) {
    setTimeout(function(){db.close();}, 300000);
@@ -19,6 +20,7 @@ MongoClient.connect(mongourl, function(err, db) {
      console.log("Could not connect to MongoDB");
    }
 
+   //for loop around the db.create equal to length of allitmes and test every item.
    if(db.getCollection(/*collection name*/).exists() === null) {
      db.createCollection(); //add specifics to this
      //https://docs.mongodb.com/manual/reference/method/db.createCollection/
