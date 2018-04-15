@@ -45,10 +45,10 @@ request('http://api.steamapis.com/market/items/730?api_key=3euKunlWOMTCoRTjGXWEb
                         });
         //https://docs.mongodb.com/manual/reference/method/db.createCollection/
         console.log("Created collection for", colName);
-      }*/
+      }
       else {
         console.log("Collection for", colName, "already exists")
-      };
+      };*/
     };
   });
 });
