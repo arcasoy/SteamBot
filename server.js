@@ -1,5 +1,6 @@
 const express = require('express');
 const mongo = require('mongodb');
+const request = require('request');
 const app = express();
 const router = express.Router();
 
@@ -10,6 +11,9 @@ var mongourl = "mongodb://arcasoy1:3141592653589793238462643383279@cluster0-shar
 /*
 var allitems = (steam api for all items)
 */
+request('http://api.steamapis.com/market/items/730?api_key=3euKunlWOMTCoRTjGXWEbDAmJ8c', function (error, response, body) {
+  console.log(body);
+});
 //Connect to MongoDB and check connection. Then create collection for each skin if not already made
 MongoClient.connect(mongourl, function(err, db) {
    setTimeout(function(){db.close();}, 300000);
@@ -19,12 +23,12 @@ MongoClient.connect(mongourl, function(err, db) {
    if(err) {
      console.log("Could not connect to MongoDB");
    }
-
-   //for loop around the db.create equal to length of allitmes and test every item.
-   if(db.getCollection(/*collection name*/).exists() === null) {
+/*
+   //for loop around the db.create equal to length of allitems and test every item.
+   if(db.getCollection(/*collection name*).exists() === null) {
      db.createCollection(); //add specifics to this
      //https://docs.mongodb.com/manual/reference/method/db.createCollection/
-   }
+   }*/
 });
 
 app.use(express.static(__dirname));
