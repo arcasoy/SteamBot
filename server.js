@@ -10,24 +10,45 @@ var mongourl = "mongodb://arcasoy1:3141592653589793238462643383279@cluster0-shar
 //request the list of CSGO skins from api here which will be used to test if/make a collection for each skin
 request('http://api.steamapis.com/market/items/730?api_key=3euKunlWOMTCoRTjGXWEbDAmJ8c', function (error, response, json) {
   var allItems = JSON.parse(json);
-  //console.log("allItems", allItems);
-  console.log("There are ", allItems.data.length, "CS:GO items!");
-});
-//Connect to MongoDB and check connection. Then create collection for each skin if not already made
-MongoClient.connect(mongourl, function(err, db) {
-   setTimeout(function(){db.close();}, 300000);
-   if(!err) {
-     console.log("Connected to MongoDB");
-   }
-   if(err) {
-     console.log("Could not connect to MongoDB");
-   }
-/*
-   //for loop around the db.create equal to length of allitems and test every item.
-   if(db.getCollection(/*collection name*).exists() === null) {
-     db.createCollection(); //add specifics to this
-     //https://docs.mongodb.com/manual/reference/method/db.createCollection/
-   }*/
+  console.log("There are", allItems.data.length, "CS:GO items on the market");
+
+  //Connect to MongoDB and check connection. Then create collection for each skin if not already made
+  MongoClient.connect(mongourl, function(err, db) {
+     if(!err) {
+       console.log("Connected to MongoDB");
+     }
+     if(err) {
+       console.log("Could not connect to MongoDB");
+     }
+
+     for (var i = 0; i < 1; i++) {
+      colName = allItems.data[i].market_name;
+      if(db.getCollection(colName).exists() === null) {
+        db.createCollection(colName, { validator: {
+                            $jsonSchema: {
+                              bsonType: "object",
+                              required: ["market_name", "prices"],
+                              properties: {
+                                market_name: {
+                                  bsonType: "string",
+                                  description: "must be a string and is required"
+                                },
+                                prices: {
+                                  bsonType: "object",
+                                  description: "must be an object and is required"
+                                }
+                              }
+                            }
+                          }
+                        });
+        //https://docs.mongodb.com/manual/reference/method/db.createCollection/
+        console.log("Created collection for", colName);
+      }
+      else {
+        console.log("Collection for", colName, "already exists")
+      };
+    };
+  });
 });
 
 app.use(express.static(__dirname));
@@ -43,5 +64,5 @@ app.get('/', function (req, res) {
 });
 
 app.listen(3000, function () {
-  console.log('Example app listening on port 3000!')
+  console.log('Example app listening on port 3000')
 });
