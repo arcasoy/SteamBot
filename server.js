@@ -11,8 +11,9 @@ var mongourl = "mongodb://arcasoy1:3141592653589793238462643383279@cluster0-shar
 /*
 var allitems = (steam api for all items)
 */
-request('http://api.steamapis.com/market/items/730?api_key=3euKunlWOMTCoRTjGXWEbDAmJ8c', function (error, response, allitems) {
-  console.log(allitems);
+request('http://api.steamapis.com/market/items/730?api_key=3euKunlWOMTCoRTjGXWEbDAmJ8c', function (error, response, json) {
+  var allItems = JSON.parse(json);
+  console.log(allItems.data.market_name);
 });
 //Connect to MongoDB and check connection. Then create collection for each skin if not already made
 MongoClient.connect(mongourl, function(err, db) {
