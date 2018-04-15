@@ -1,6 +1,6 @@
 const express = require('express');
 const mongo = require('mongodb');
-const request = require('request');
+var request = require('request');
 const app = express();
 const router = express.Router();
 
