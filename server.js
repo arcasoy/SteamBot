@@ -11,7 +11,7 @@ var mongourl = "mongodb://arcasoy1:3141592653589793238462643383279@cluster0-shar
 request('http://api.steamapis.com/market/items/730?api_key=3euKunlWOMTCoRTjGXWEbDAmJ8c', function (error, response, json) {
   var allItems = JSON.parse(json);
   //console.log("allItems", allItems);
-  console.log(allItems.data[0].market_name);
+  console.log("There are ", allItems.data.length, "CS:GO items!");
 });
 //Connect to MongoDB and check connection. Then create collection for each skin if not already made
 MongoClient.connect(mongourl, function(err, db) {
