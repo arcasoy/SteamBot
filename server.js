@@ -1,6 +1,6 @@
 const express = require('express');
 const mongo = require('mongodb');
-var request = require('request');
+const request = require('request');
 const app = express();
 const router = express.Router();
 
@@ -11,8 +11,8 @@ var mongourl = "mongodb://arcasoy1:3141592653589793238462643383279@cluster0-shar
 /*
 var allitems = (steam api for all items)
 */
-request('http://api.steamapis.com/market/items/730?api_key=3euKunlWOMTCoRTjGXWEbDAmJ8c', function (error, response, body) {
-  console.log(body);
+request('http://api.steamapis.com/market/items/730?api_key=3euKunlWOMTCoRTjGXWEbDAmJ8c', function (error, response, allitems) {
+  console.log(allitems);
 });
 //Connect to MongoDB and check connection. Then create collection for each skin if not already made
 MongoClient.connect(mongourl, function(err, db) {
