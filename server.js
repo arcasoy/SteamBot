@@ -33,7 +33,7 @@ request('http://api.steamapis.com/market/items/730?api_key=3euKunlWOMTCoRTjGXWEb
       });
       var collection = db.collection(colName).count();
       console.log(collection);
-      if(collection === undefined) {
+      if(collection == "Promise { <pending> }") {
         /*db.createCollection(colName, { validator: {
                             $jsonSchema: {
                               bsonType: "object",
