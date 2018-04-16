@@ -29,11 +29,11 @@ request('http://api.steamapis.com/market/items/730?api_key=3euKunlWOMTCoRTjGXWEb
       console.log(colName);
       //having troubles figuring out a way to find current collections and compare them to new ones being made
       db.collections(function(err, collections) {
-        console.log(collections);
+        //console.log(collections);
       });
       var collection = db.collection(colName).count();
       console.log(collection);
-      if(collection == "Promise { <pending> }") {
+      if(collection == 0) {
         /*db.createCollection(colName, { validator: {
                             $jsonSchema: {
                               bsonType: "object",
