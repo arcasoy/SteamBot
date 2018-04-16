@@ -24,7 +24,7 @@ request('http://api.steamapis.com/market/items/730?api_key=3euKunlWOMTCoRTjGXWEb
      for (var i = 0; i < 1; i++) {
       var colName = allItems.data[i].market_name;
       console.log(colName);
-      db.collectionNames(function(err, collections) {
+      db.collections(function(err, collections) {
         console.log(collections);
       });
       if(1 === undefined) {
