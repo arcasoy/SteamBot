@@ -30,7 +30,7 @@ request('http://api.steamapis.com/market/items/730?api_key=3euKunlWOMTCoRTjGXWEb
       //having troubles figuring out a way to find current collections and compare them to new ones being made
       db.collections(function(err, collections) {
         console.log(collections);
-        var curCol = db.collection(colName).count();
+        var curCol = db.collection(colName);
         console.log(curCol);
         var oldCol = 0;
         for (var j = 0; j < collections.length; j++) {
