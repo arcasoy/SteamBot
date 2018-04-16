@@ -38,8 +38,8 @@ request('http://api.steamapis.com/market/items/730?api_key=3euKunlWOMTCoRTjGXWEb
         for (var j = 0; j < collections.length; j++) {
           if (curCol == collections[i]) {
             oldCol = 1;
-          }*/
-        }
+          }
+        }*/
         console.log(collections);
         if(oldCol == 0) {
           db.createCollection(colName/*, { validator: {
