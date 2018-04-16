@@ -31,7 +31,7 @@ request('http://api.steamapis.com/market/items/730?api_key=3euKunlWOMTCoRTjGXWEb
       db.collections(function(err, collections) {
         console.log(collections);
       });
-      var collection = db.collection(colName);
+      var collection = db.collection(colName).count();
       console.log(collection);
       if(collection === undefined) {
         /*db.createCollection(colName, { validator: {
