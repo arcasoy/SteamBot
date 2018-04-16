@@ -48,7 +48,7 @@ request('http://api.steamapis.com/market/items/730?api_key=3euKunlWOMTCoRTjGXWEb
       }
       else {
         console.log("Collection for", colName, "already exists")
-      };*/
+      };
     };
   });
 });
