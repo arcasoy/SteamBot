@@ -31,14 +31,16 @@ request('http://api.steamapis.com/market/items/730?api_key=3euKunlWOMTCoRTjGXWEb
       db.collections(function(err, collections) {
         console.log(collections);
         var curCol = db.collection(colName);
-        console.log(curCol);
-        console.log(collections[1]);
+        //console.log(curCol);
+        //console.log(collections[i]);
         var oldCol = 0;
+        /*
         for (var j = 0; j < collections.length; j++) {
           if (curCol == collections[i]) {
             oldCol = 1;
-          }
+          }*/
         }
+        console.log(collections);
         if(oldCol == 0) {
           db.createCollection(colName/*, { validator: {
                               $jsonSchema: {
