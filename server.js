@@ -24,7 +24,7 @@ request('http://api.steamapis.com/market/items/730?api_key=3euKunlWOMTCoRTjGXWEb
 
      const db = client.db(dbName);
 
-     for (var i = 0; i < 1; i++) {
+     for (var i = 0; i < 2; i++) {
       var colName = allItems.data[i].market_name;
       console.log(colName);
       //having troubles figuring out a way to find current collections and compare them to new ones being made
