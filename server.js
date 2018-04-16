@@ -30,40 +30,40 @@ request('http://api.steamapis.com/market/items/730?api_key=3euKunlWOMTCoRTjGXWEb
       //having troubles figuring out a way to find current collections and compare them to new ones being made
       db.collections(function(err, collections) {
         console.log(collections);
-      });
-      var curCol = db.collection(colName).count();
-      console.log(curCol);
-      var oldCol = 0;
-      for (var j = 0; j < collections.length; j++) {
-        if (curCol == collections[i]) {
-          oldCol = 1;
+        var curCol = db.collection(colName).count();
+        console.log(curCol);
+        var oldCol = 0;
+        for (var j = 0; j < collections.length; j++) {
+          if (curCol == collections[i]) {
+            oldCol = 1;
+          }
         }
-      }
-      if(oldCol == 0) {
-        /*db.createCollection(colName, { validator: {
-                            $jsonSchema: {
-                              bsonType: "object",
-                              required: ["market_name", "prices"],
-                              properties: {
-                                market_name: {
-                                  bsonType: "string",
-                                  description: "must be a string and is required"
-                                },
-                                prices: {
-                                  bsonType: "object",
-                                  description: "must be an object and is required"
+        if(oldCol == 0) {
+          /*db.createCollection(colName, { validator: {
+                              $jsonSchema: {
+                                bsonType: "object",
+                                required: ["market_name", "prices"],
+                                properties: {
+                                  market_name: {
+                                    bsonType: "string",
+                                    description: "must be a string and is required"
+                                  },
+                                  prices: {
+                                    bsonType: "object",
+                                    description: "must be an object and is required"
+                                  }
                                 }
                               }
                             }
-                          }
-                        });*/
-        //https://docs.mongodb.com/manual/reference/method/db.createCollection/
-        console.log("Created collection for", colName);
-        console.log("In the if statement!")
-      }
-      else if (oldCol == 1) {
-        console.log("Collection for", colName, "already exists")
-      };
+                          });*/
+          //https://docs.mongodb.com/manual/reference/method/db.createCollection/
+          console.log("Created collection for", colName);
+          console.log("In the if statement!")
+        }
+        else if (oldCol == 1) {
+          console.log("Collection for", colName, "already exists")
+        };
+      });
     };
   });
 });
