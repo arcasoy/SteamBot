@@ -31,41 +31,9 @@ request('http://api.steamapis.com/market/items/730?api_key=3euKunlWOMTCoRTjGXWEb
       db.collections(function(err, collections) {
         console.log(collections);
         var curCol = db.collection(colName);
-        //console.log(curCol);
-        //console.log(collections[i]);
-        var oldCol = 0;
-        /*
-        for (var j = 0; j < collections.length; j++) {
-          if (curCol == collections[i]) {
-            oldCol = 1;
-          }
-        }*/
-        console.log(collections);
-        if(oldCol == 0) {
-          db.createCollection(colName/*, { validator: {
-                              $jsonSchema: {
-                                bsonType: "object",
-                                required: ["market_name", "prices"],
-                                properties: {
-                                  market_name: {
-                                    bsonType: "string",
-                                    description: "must be a string and is required"
-                                  },
-                                  prices: {
-                                    bsonType: "object",
-                                    description: "must be an object and is required"
-                                  }
-                                }
-                              }
-                            }
-                          }*/);
+          db.createCollection(colName);
           //https://docs.mongodb.com/manual/reference/method/db.createCollection/
           console.log("Created collection for", colName);
-          console.log("In the if statement!")
-        }
-        else if (oldCol == 1) {
-          console.log("Collection for", colName, "already exists")
-        };
       });
     };
   });
