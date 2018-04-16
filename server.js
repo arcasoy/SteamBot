@@ -40,7 +40,7 @@ request('http://api.steamapis.com/market/items/730?api_key=3euKunlWOMTCoRTjGXWEb
           }
         }
         if(oldCol == 0) {
-          db.createCollection(colName, { validator: {
+          db.createCollection(colName/*, { validator: {
                               $jsonSchema: {
                                 bsonType: "object",
                                 required: ["market_name", "prices"],
@@ -56,7 +56,7 @@ request('http://api.steamapis.com/market/items/730?api_key=3euKunlWOMTCoRTjGXWEb
                                 }
                               }
                             }
-                          });
+                          }*/);
           //https://docs.mongodb.com/manual/reference/method/db.createCollection/
           console.log("Created collection for", colName);
           console.log("In the if statement!")
