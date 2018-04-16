@@ -29,11 +29,17 @@ request('http://api.steamapis.com/market/items/730?api_key=3euKunlWOMTCoRTjGXWEb
       console.log(colName);
       //having troubles figuring out a way to find current collections and compare them to new ones being made
       db.collections(function(err, collections) {
-        //console.log(collections);
+        console.log(collections);
       });
-      var collection = db.collection(colName).count();
-      console.log(collection);
-      if(collection == 0) {
+      var curCol = db.collection(colName).count();
+      console.log(curCol);
+      var oldCol = 0;
+      for (var j = 0; j < collections.length; j++) {
+        if (curCol == collections[i]) {
+          oldCol = 1;
+        }
+      }
+      if(oldCol == 0) {
         /*db.createCollection(colName, { validator: {
                             $jsonSchema: {
                               bsonType: "object",
@@ -55,7 +61,7 @@ request('http://api.steamapis.com/market/items/730?api_key=3euKunlWOMTCoRTjGXWEb
         console.log("Created collection for", colName);
         console.log("In the if statement!")
       }
-      else {
+      else if (oldCol == 1) {
         console.log("Collection for", colName, "already exists")
       };
     };
