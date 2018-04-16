@@ -31,8 +31,8 @@ request('http://api.steamapis.com/market/items/730?api_key=3euKunlWOMTCoRTjGXWEb
       db.collections(function(err, collections) {
         console.log(collections);
       });
-      if(db.getCollection(colName).exists() === undefined) {
-        db.createCollection(colName, { validator: {
+      if(db.getCollection(colName) === undefined) {
+        /*db.createCollection(colName, { validator: {
                             $jsonSchema: {
                               bsonType: "object",
                               required: ["market_name", "prices"],
@@ -48,9 +48,10 @@ request('http://api.steamapis.com/market/items/730?api_key=3euKunlWOMTCoRTjGXWEb
                               }
                             }
                           }
-                        });
+                        });*/
         //https://docs.mongodb.com/manual/reference/method/db.createCollection/
         console.log("Created collection for", colName);
+        console.log("In the if statement!")
       }
       else {
         console.log("Collection for", colName, "already exists")
