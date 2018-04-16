@@ -25,6 +25,7 @@ request('http://api.steamapis.com/market/items/730?api_key=3euKunlWOMTCoRTjGXWEb
       var colName = allItems.data[i].market_name;
       console.log(colName);
       var collection = db.test;
+      console.log(collection);
       /*if(db.getCollection(colName).exists() === null) {
         db.createCollection(colName, { validator: {
                             $jsonSchema: {
